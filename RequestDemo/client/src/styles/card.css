@@ -2,25 +2,26 @@
   width: 90vw;
   margin: 0 auto;
   margin-top: 1em;
-  /* padding: 0.1em; */
   display: flex;
-  /* justify-content: space-between; */
-  border: solid 1px var(--divider-color);
-  color: var(--secondary-text-color)
+  color: var(--secondary-text-color);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  -webkit-transition: all 450ms ease;
+  transition: all 450ms ease;
 }
 
-/* TODO: 更好看的卡片 */
-
 .card-picture {
-  /* width: 20vw; */
   height: 20vh;
+  margin: 0.8em;
+  margin-right: 0;
 }
 
 .card-info {
-  padding: 1em;
+  padding: 0.8em;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  font-size: small;
   flex-grow: 1;
   text-align: left;
   overflow: hidden;

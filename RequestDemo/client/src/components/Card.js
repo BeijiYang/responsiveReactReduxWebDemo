@@ -6,10 +6,10 @@ const Card = ({ name, email, phone, intro, url }) => (
   <div className="card">
     <img src={url} className="card-picture" alt="card" />
     <div className="card-info">
-      <div className="card-name">name: {name}</div>
-      <div className="card-email">email: {email}</div>
-      <div className="card-phone">phone: {phone}</div>
-      <div className="card-intro">intro: {intro}</div>
+      <div className="card-name">Name: {name}</div>
+      <div className="card-email">Email: {email}</div>
+      <div className="card-phone">Phone: {phone}</div>
+      <div className="card-intro">Intro: {intro}</div>
     </div>
   </div>
 )
