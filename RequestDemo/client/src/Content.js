@@ -1,21 +1,34 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import Card from './Card'
 import ProgressStepper from './ProgressStepper'
 import './content.css'
 
 export default class Content extends Component {
+  constructor() {
+    super()
+    this.state = {
+      companies: [],
+      totalPageNum: 0
+    }
+  }
+  componentDidMount() {
+    axios.post('http://localhost:3001/companies')
+      .then(res => res.data)
+      .then(data => this.setState({ companies: data.companies, totalPageNum: data.totalPageNum }))
+  }
   render() {
-    const data = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
-    const name = 'NameCompany'
-    const email = 'email@emai.com'
-    const phone = '0123456789'
-    const intro = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-    const url = 'asdfasdf'
-    const cards = data.map((i, idx) => <Card key={idx} name={name} email={email} phone={phone} intro={intro} url={url} />)
+
+    const cards = this.state.companies.map(
+      company => {
+        const { id, name, email, phone, intro, url } = company
+        return <Card key={id} name={name} email={email} phone={phone} intro={intro} url={url} />
+      }
+    )
     return (
       <div className='content'>
         {cards}
-        <ProgressStepper />
+        <ProgressStepper totalPageNum={this.state.totalPageNum} />
       </div>
     )
   }

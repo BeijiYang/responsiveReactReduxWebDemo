@@ -31,17 +31,17 @@ class ProgressStepper extends React.Component {
   };
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes, theme, totalPageNum } = this.props;
 
     return (
       <MobileStepper
         variant="progress"
-        steps={6}
+        steps={totalPageNum}
         position="static"
         activeStep={this.state.activeStep}
         className={classes.root}
         nextButton={
-          <Button size="small" onClick={this.handleNext} disabled={this.state.activeStep === 5}>
+          <Button size="small" onClick={this.handleNext} disabled={this.state.activeStep === totalPageNum - 1}>
             Next
             {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
           </Button>
@@ -60,6 +60,7 @@ class ProgressStepper extends React.Component {
 ProgressStepper.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
+  totalPageNum: PropTypes.number.isRequired
 };
 
 export default withStyles(styles, { withTheme: true })(ProgressStepper);
