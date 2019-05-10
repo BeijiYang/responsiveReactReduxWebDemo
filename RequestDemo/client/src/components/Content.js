@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Card from './Card'
 import ProgressStepper from './ProgressStepper'
-import config from './config'
-import './content.css'
+import config from '../config/config'
+import '../styles/content.css'
 
 const { API: { companies } } = config
 

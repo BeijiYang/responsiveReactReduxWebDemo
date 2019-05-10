@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import './card.css'
+import '../styles/card.css'
 
 const Card = ({ name, email, phone, intro, url }) => (
   <div className="card">
