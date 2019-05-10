@@ -14,40 +14,25 @@ const styles = {
 };
 
 class ProgressStepper extends React.Component {
-  state = {
-    activeStep: 0,
-  };
-
-  handleNext = () => {
-    this.setState(state => ({
-      activeStep: state.activeStep + 1,
-    }));
-  };
-
-  handleBack = () => {
-    this.setState(state => ({
-      activeStep: state.activeStep - 1,
-    }));
-  };
 
   render() {
-    const { classes, theme, totalPageNum } = this.props;
+    const { classes, theme, totalPageNum, activeStep } = this.props;
 
     return (
       <MobileStepper
         variant="progress"
         steps={totalPageNum}
         position="static"
-        activeStep={this.state.activeStep}
+        activeStep={activeStep}
         className={classes.root}
         nextButton={
-          <Button size="small" onClick={this.handleNext} disabled={this.state.activeStep === totalPageNum - 1}>
+          <Button size="small" onClick={this.props.handleNext} disabled={activeStep === totalPageNum - 1}>
             Next
             {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
           </Button>
         }
         backButton={
-          <Button size="small" onClick={this.handleBack} disabled={this.state.activeStep === 0}>
+          <Button size="small" onClick={this.props.handleBack} disabled={activeStep === 0}>
             {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
             Back
           </Button>
