@@ -1,0 +1,25 @@
+.header {
+   background-color: var(--default-primary-color);
+   height: 6vh;
+   width: 100vw;
+   padding: 1vh;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: fixed;
+}
+
+.header-title {
+  margin: 0;
+  font-size: xx-large;
+  font-weight: 600;
+  color: var(--text-primary-color);
+  padding: 0.3em;
+}
+
+.header-login {
+  font-size: small;
+  font-weight: 500;
+  color: var(--secondary-text-color);
+  padding: 2em;
+}
