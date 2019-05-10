@@ -18,7 +18,13 @@ export default class Content extends Component {
 
   fetchCompanies = (pageIndex) => axios.post('http://localhost:3001/companies', pageIndex)
     .then(res => res.data)
-    .then(data => this.setState({ companies: data.companies, totalPageNum: data.totalPageNum }))
+    .then(data => {
+      const { companies, totalPageNum } = data
+      this.setState({
+        companies: [...this.state.companies, ...companies],
+        totalPageNum: totalPageNum
+      })
+    })
 
   /**
    * @param direction {Number} 1 for Next and -1 for Back
