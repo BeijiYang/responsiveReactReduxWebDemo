@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Card from './Card'
 import ProgressStepper from './ProgressStepper'
+import config from './config'
 import './content.css'
+
+const { API: { companies } } = config
 
 export default class Content extends Component {
 
@@ -16,7 +19,7 @@ export default class Content extends Component {
     this.fetchCompanies(0)
   }
 
-  fetchCompanies = (pageIndex) => axios.post('http://localhost:3001/companies', pageIndex)
+  fetchCompanies = (pageIndex) => axios.post(companies, pageIndex)
     .then(res => res.data)
     .then(data => {
       const { companies, totalPageNum } = data
@@ -39,8 +42,11 @@ export default class Content extends Component {
   render() {
     const cards = this.state.companies.map(
       company => {
-        const { id, name, email, phone, intro, url } = company
-        return <Card key={id} name={name} email={email} phone={phone} intro={intro} url={url} />
+        const { id, ...info } = company
+        return <Card
+          key={id}
+          {...info}
+        />
       }
     )
 
