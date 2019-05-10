@@ -15,14 +15,16 @@ app.get('/', (req, res) => {
 app.post('/companies', (req, res) => {
   const { body: { pageIndex } } = req
 
-  const companies = [{
-    id: 0,
+  const getData = length => Array.from({ length }, () => ({
+    id: Math.random(),
     name: 'NameCompany',
     email: 'email@emai.com',
     phone: '0123456789',
     intro: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    url: 'asdfasdf',
-  }]
+    url: `https://picsum.photos/300?random=${Math.floor(Math.random() * 10)}`,
+  }))
+
+  const companies = getData(10)
   res.send({
     companies,
     totalPageNum: 10
