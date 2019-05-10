@@ -20,16 +20,12 @@ export default class Content extends Component {
     .then(res => res.data)
     .then(data => this.setState({ companies: data.companies, totalPageNum: data.totalPageNum }))
 
-  handleNext = () => {
+  /**
+   * @param direction {Number} 1 for Next and -1 for Back
+   */
+  handleClick = (direction) => {
     const { activeStep } = this.state
-    const newActiveSetp = activeStep + 1
-    this.setState({ activeStep: newActiveSetp })
-    this.fetchCompanies(newActiveSetp)
-  }
-
-  handleBack = () => {
-    const { activeStep } = this.state
-    const newActiveSetp = activeStep - 1
+    const newActiveSetp = activeStep + direction
     this.setState({ activeStep: newActiveSetp })
     this.fetchCompanies(newActiveSetp)
   }
@@ -48,8 +44,8 @@ export default class Content extends Component {
         <ProgressStepper
           totalPageNum={this.state.totalPageNum}
           activeStep={this.state.activeStep}
-          handleNext={this.handleNext}
-          handleBack={this.handleBack}
+          handleNext={() => this.handleClick(1)}
+          handleBack={() => this.handleClick(-1)}
         />
       </div>
     )
