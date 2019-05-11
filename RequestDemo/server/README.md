@@ -2,6 +2,8 @@
 
 An Express server
 
+use https://picsum.photos/ to show random pictures.
+
 # Usage
 
 ```

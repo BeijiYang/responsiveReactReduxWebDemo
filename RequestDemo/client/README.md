@@ -6,7 +6,8 @@ It is a responsive designed demo app to fetch and show companies information.
 
 step1: 
 
-    rename: config.defautl.js => config.js
+    rename: src/config/
+    config.defautl.js => config.js
 
 step2: 
 ```
