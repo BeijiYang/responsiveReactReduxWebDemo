@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Card from './Card'
-import LoadingCard from './LoadingCard'
-import ProgressStepper from './ProgressStepper'
+import Card from '../components/Card'
+import LoadingCard from '../components/LoadingCard'
+import ProgressStepper from '../components/ProgressStepper'
+import Button from '../components/CustomButton'
 import config from '../config/config'
-import Button from './CustomButton';
 import '../styles/content.css'
 
 const {
