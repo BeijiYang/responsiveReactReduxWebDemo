@@ -19,10 +19,10 @@ React + Express
 # GIF Demonstration
 
 mobile
-![mobile](./gifs/mobile.gif)
+![mobile](./client/gifs/mobile.gif)
 
 slow net speed
-![mobile-slow-net](./gifs/mobile-slow-net.gif)
+![mobile-slow-net](./client/gifs/mobile-slow-net.gif)
 
 web
-![web](./gifs/web.gif)
+![web](./client/gifs/web.gif)
