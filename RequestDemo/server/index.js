@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/companies', (req, res) => {
-  const { body: { pageIndex } } = req
+  const { body: { pageIndex, CARDS_PER_PAGE } } = req
 
   const getData = length => Array.from({ length }, () => ({
     id: Math.random(),
@@ -24,7 +24,7 @@ app.post('/companies', (req, res) => {
     url: `https://picsum.photos/300?random=${Math.floor(Math.random() * 10)}`,
   }))
 
-  const companies = getData(10)
+  const companies = getData(CARDS_PER_PAGE)
   res.send({
     companies,
     totalPageNum: 10

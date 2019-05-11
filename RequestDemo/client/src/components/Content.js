@@ -24,7 +24,7 @@ export default class Content extends Component {
     this.showNewCompanies(0)
   }
 
-  fetcher = pageIndex => axios.post(companiesUrl, pageIndex).then(res => res.data)
+  fetcher = pageIndex => axios.post(companiesUrl, { pageIndex, CARDS_PER_PAGE }).then(res => res.data)
 
   fetchNewCompanies = async (pageIndex) => {
     const resData = await this.fetcher(pageIndex)
