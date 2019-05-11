@@ -17,8 +17,8 @@ app.post('/companies', (req, res) => {
 
   const getData = length => Array.from({ length }, () => ({
     id: Math.random(),
-    name: 'NameCompany',
-    email: 'email@emai.com',
+    name: `Company No.${Math.floor(Math.random() * 1000)}`,
+    email: 'email@email.com',
     phone: '0123456789',
     intro: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     url: `https://picsum.photos/300?random=${Math.floor(Math.random() * 10)}`,
