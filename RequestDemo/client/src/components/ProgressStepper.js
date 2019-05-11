@@ -6,25 +6,30 @@ import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import config from '../config/config'
+
+const {
+  colors: { TEXT_PRIMARY_COLOR, DARK_PRIMARY_COLOR }
+} = config
 
 const styles = {
   root: {
-    maxWidth: 400,
     flexGrow: 1,
     marginTop: 10,
+    backgroundColor: TEXT_PRIMARY_COLOR,
   },
 }
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#0097A7',
+      main: DARK_PRIMARY_COLOR,
     },
   },
 })
 class ProgressStepper extends React.Component {
 
   render() {
-    const { classes, totalPageNum, activeStep } = this.props;
+    const { classes, totalPageNum, activeStep, handleNext, handleBack } = this.props
 
     return (
       <MuiThemeProvider theme={theme}>
@@ -35,13 +40,13 @@ class ProgressStepper extends React.Component {
           activeStep={activeStep}
           className={classes.root}
           nextButton={
-            <Button size="small" onClick={this.props.handleNext} disabled={activeStep === totalPageNum - 1}>
+            <Button size="small" onClick={handleNext} disabled={activeStep === totalPageNum - 1}>
               Next
             {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
             </Button>
           }
           backButton={
-            <Button size="small" onClick={this.props.handleBack} disabled={activeStep === 0}>
+            <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
               {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
               Back
           </Button>
@@ -55,7 +60,10 @@ class ProgressStepper extends React.Component {
 ProgressStepper.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
-  totalPageNum: PropTypes.number.isRequired
+  activeStep: PropTypes.number.isRequired,
+  totalPageNum: PropTypes.number.isRequired,
+  handleNext: PropTypes.func.isRequired,
+  handleBack: PropTypes.func.isRequired,
 }
 
 export default withStyles(styles, { withTheme: true })(ProgressStepper)
