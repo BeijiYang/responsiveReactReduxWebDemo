@@ -28,6 +28,10 @@
   overflow: hidden;
 }
 
+.card-info-icon {
+  margin-right: 0.8em;
+}
+
 .card-intro {
   overflow: hidden;
   text-overflow:ellipsis;
