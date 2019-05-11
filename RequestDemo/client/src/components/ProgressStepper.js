@@ -20,6 +20,9 @@ const styles = {
   },
 }
 const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
   palette: {
     primary: {
       main: DARK_PRIMARY_COLOR,

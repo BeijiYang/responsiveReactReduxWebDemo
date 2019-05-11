@@ -11,6 +11,9 @@ const {
 
 
 const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
   palette: {
     secondary: {
       main: ACCENT_COLOR,
