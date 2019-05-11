@@ -7,6 +7,7 @@
    justify-content: space-between;
    align-items: center;
    position: fixed;
+   z-index: 1;
 }
 
 .header-title {
@@ -17,9 +18,31 @@
   padding: 0.3em;
 }
 
-.header-login {
-  font-size: small;
+.header-login-icon {
   font-weight: 500;
   color: var(--secondary-text-color);
-  padding: 2em;
+  padding-right: 1.5em;
+  cursor: pointer;
+}
+
+.header-login {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .header {
+    padding: 4vh 6vh;
+    position: relative;
+  }
+  .header-login {
+    display: block;
+    font-size: small;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    padding-right: 10vh;
+    cursor: pointer;
+  }
+  .header-login-icon {
+    display: none;
+  }
 }

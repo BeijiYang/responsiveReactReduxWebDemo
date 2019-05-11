@@ -1,8 +1,42 @@
 .footer {
    background-color: var(--dark-primary-color);
-   height: 6vh;
-   padding: 1vh;
+   height: 8vh;
+   padding: 1em;
    display: flex;
-   justify-content: space-between;
-   align-items: center;
+   flex-direction: column;
+   color: var(--primary-text-color);
+   font-weight: 500;
+   font-size: small;
+}
+
+.footer-link {
+  text-decoration: none;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.footer-icon {
+  margin-right: 0.3em;
+}
+
+@media (min-width: 600px) {
+  .footer {
+    height: 20vh;
+    font-size: medium;
+  }
+  .footer-self-intro {
+    padding-top: 2.5em;
+  }
+
+  .footer-link {
+    color: var(--accent-color);
+    margin-top: 3vh;
+  }
+
+  .footer-icon {
+    color: var(--accent-color);
+  }
 }
