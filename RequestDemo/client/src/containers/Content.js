@@ -5,6 +5,7 @@ import LoadingCard from '../components/LoadingCard'
 import ProgressStepper from '../components/ProgressStepper'
 import Button from '../components/CustomButton'
 import config from '../config/config'
+import message from '../locale/commonMessageEn'
 import '../styles/content.css'
 
 const {
@@ -125,7 +126,7 @@ export default class Content extends Component {
             handleClick={() => handleClickButton(1)}
             disabled={totalPageNum === activeStep + 1}
           >
-            Next Page
+            {message['common.nextpage']}
           </Button>
         </div>
       </div>

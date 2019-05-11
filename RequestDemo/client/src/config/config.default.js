@@ -1,6 +1,7 @@
 export default {
   API: {
-    companies: 'http://localhost:3001/companies'
+    companies: 'http://localhost:3001/companies',
+    myGithub: 'https://github.com/BeijiYang'
   },
   colors: {
     DARK_PRIMARY_COLOR: '#0097A7',
