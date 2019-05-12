@@ -2,7 +2,13 @@
 
 It is a responsive designed demo app to fetch and show companies information.
 
-React + Express
+**update**
+
+Refactored the app using Redux.
+
+~~version 1: React + Express~~
+
+version 2: React/Redux + Express
 
 # Features
 
