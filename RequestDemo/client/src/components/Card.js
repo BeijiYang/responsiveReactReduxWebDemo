@@ -51,7 +51,7 @@ Card.propTypes = {
   phone: PropTypes.string.isRequired,
   intro: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-};
+}
 
 
 export default Card
